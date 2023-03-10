@@ -32,10 +32,10 @@ else
   download_url=$(curl -sL $expanded_assets_url | grep -o -E "\/shiftkey\/desktop\/releases\/download\/release-[0-9.]*-linux1\/GitHubDesktop-linux-.*-linux1\.$package_manager")
   
   filename=$(grep -o -E "GitHubDesktop-linux-[0-9.]*-linux1\.[a-zA-Z]{3,8}" <<< $download_url)
-  echo "Downloading $filename ..."
+  echo "Descargando $filename ..."
   # TODO: add check if file is already present
   curl -sLOJ https://github.com$download_url
-  echo "Download complete!"
+  echo "Descarga completa!"
   
   read -p "Should the downloaded package be installed? (y/n)" choice
   # TODO: add redundancy check if the package is present in the local directory
